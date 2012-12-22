@@ -1,4 +1,7 @@
 PoliticalIdTest::Application.routes.draw do
+  get "survey/home"
+  post "survey/submit"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
