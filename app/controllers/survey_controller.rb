@@ -20,7 +20,7 @@ class SurveyController < ApplicationController
 	  	end
 	  end
 
-	  res = Result.new
+	  @res = Result.new
 
 	  econ_res = results[0]
 	  soc_res = results[1]
@@ -30,11 +30,11 @@ class SurveyController < ApplicationController
 	  soc_score = calculate_score(soc_res)
 	  forp_score = calculate_score(forp_res)
 
-	  res.economic_score = econ_score
-	  res.social_score = soc_score
-	  res.foreign_p_score = forp_score
+	  @res.economic_score = econ_score
+	  @res.social_score = soc_score
+	  @res.foreign_p_score = forp_score
 
-	  if res.save
+	  if @res.save
 	  	#redirect to the results/survey page
 	  else
 	  	#redirect to previous page with error
