@@ -11,7 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121222220347) do
+ActiveRecord::Schema.define(:version => 20121224010908) do
+
+  create_table "questions", :force => true do |t|
+    t.integer  "type"
+    t.boolean  "orientation"
+    t.text     "text"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
 
   create_table "results", :force => true do |t|
     t.integer  "economic_score"
@@ -19,6 +27,13 @@ ActiveRecord::Schema.define(:version => 20121222220347) do
     t.integer  "foreign_p_score"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
 end
