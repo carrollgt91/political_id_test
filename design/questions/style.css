@@ -1,0 +1,59 @@
+body
+{
+background: -webkit-radial-gradient(circle, #FFFFFF, #F0F0F0);
+}
+
+p
+{
+margin: 0;
+font-size: 14px;
+font-weight: bold;
+font-family: 'Quicksand', sans-serif;
+}
+
+.question
+{
+font-size: 22px;
+font-family: 'Cinzel', serif;
+}
+
+a
+{
+text-decoration: none;
+color: black;
+font-family: 'Quicksand', sans-serif;
+}
+
+#last, #next
+{
+font-size: 24px;
+position: fixed;
+top: 20%;
+}
+
+#last
+{
+left: 10%;
+}
+
+#next
+{
+right: 10%;
+}
+
+table
+{
+width: 800px;
+text-align: center;
+position: fixed;
+bottom: 50%;
+left: 50%;
+margin-left: -400px;
+margin-bottom: -40px;
+}
+
+td
+{
+width: 6em;
+}
+
