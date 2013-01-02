@@ -17,23 +17,49 @@ Political ID Test
 </div>
 
 <form>
-<table>
+<table class="main">
 <tr>
 <td colspan="5" class="question"><strong>As a means to balance the budget, the government should decrease spending rather than increase taxes.</strong></td>
 </tr>
 <tr>
 <td><input type="radio" name="response" value="stronglyDisagree" /></td>
 <td><input type="radio" name="response" value="disagree" /></td>
-<td><a href="#"><p>show more</p></a></td>
+<td rowspan="2" class="info"><p><a href="#">more info</a></p></td>
 <td><input type="radio" name="response" value="agree" /></td>
 <td><input type="radio" name="response" value="stronglyAgree" /></td>
 </tr>
 <tr>
 <td><p>strongly disagree</p></td>
 <td><p>disagree</p></td>
-<td><a href="#"><p>information</p></a></td>
 <td><p>agree</p></td>
 <td><p>strongly agree</p></td>
+</tr>
+</table>
+</form>
+
+<form>
+<table id="progress">
+<tr>
+<td><p>90%</p></td>
+<td><p>100%</p></td>
+<td><p>100%</p></td>
+</tr>
+<tr>
+<td><p>economic</p></td>
+<td><p>social</p></td>
+<td><p>foreign</p></td>
+</tr>
+</table>
+</form>
+
+<form>
+<table id="rate">
+<tr>
+<td colspan="2"><p>rate this question</p></td>
+</tr>
+<tr>
+<td><p><a id="liked" href="#">liked</a> 78%</p></td>
+<td><p><a id="disliked" href="#">disliked</a> 22%</p></td>
 </tr>
 </table>
 </form>
