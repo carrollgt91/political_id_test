@@ -27,20 +27,14 @@ vertical-align: bottom;
 {
 padding: 3px 5px 5px 8px;
 border-radius: 9px;
-box-shadow: 0px -3px 15px lightgrey inset;
-}
-
-.info a:hover
-{
-box-shadow: 0px 3px 15px lightgrey inset;
+box-shadow: 0px 0px 10px grey inset;
 }
 
 .info a:active
 {
 color: black;
-text-shadow: 0px 0px 5px lightgrey;
-background: #F0F0F0;
-box-shadow: 0px 3px 15px lightgrey inset;
+text-shadow: 0px 2px 10px grey;
+box-shadow: 0px 2px 10px grey inset;
 }
 
 a
@@ -126,12 +120,12 @@ margin-left: -212px;
 width: 101px;
 }
 
-#liked:hover
+#like:hover
 {
 color: green;
 }
 
-#disliked:hover
+#dislike:hover
 {
 color: red;
 }
@@ -139,4 +133,33 @@ color: red;
 #rate a:hover
 {
 text-shadow: 1px 1px 1px grey;
+}
+
+#discussion
+{
+width: 960px;
+margin: auto;
+}
+
+.opposed, .infavor
+{
+width: 470px;
+height: 480px;
+float: left;
+overflow: auto;
+}
+
+.opposed p, .infavor p
+{
+text-indent: 3em;
+}
+
+.opposed
+{
+padding-right: 10px;
+}
+
+.infavor
+{
+padding-left: 10px;
 }
