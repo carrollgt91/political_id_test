@@ -30,3 +30,7 @@ capybara-*.html
 **.orig
 rerun.txt
 pickle-email-*.html
+
+
+# Ignore OSX Noise
+.DS_Store
