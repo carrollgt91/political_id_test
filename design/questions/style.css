@@ -162,6 +162,11 @@ width: 470px;
 float: left;
 }
 
+#tif
+{
+padding-left: 20px;
+}
+
 .oif, h6, h5
 {
 font-family: 'Quicksand', sans-serif;
@@ -194,8 +199,17 @@ padding-left: 10px;
 
 .aresponse
 {
-color: dimgrey;
-padding-bottom: 10px;
-border-bottom: 1px solid lightgrey;
 margin-bottom: 10px;
+}
+
+.responses textarea
+{
+height: 75px;
+width: 400px;
+margin-left: 35px;
+}
+
+.done
+{
+margin-left: 398px;
 }
