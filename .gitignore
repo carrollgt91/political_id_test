@@ -34,3 +34,7 @@ pickle-email-*.html
 
 # Ignore OSX Noise
 .DS_Store
+
+#ignore bundle stubs
+
+bundler_stubs/
