@@ -1,4 +1,7 @@
 PoliticalIdTest::Application.routes.draw do
+
+  resources :questions
+
   get "survey/home"
   post "survey/submit"
 
