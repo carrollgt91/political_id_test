@@ -11,10 +11,10 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121224010908) do
+ActiveRecord::Schema.define(:version => 20130105033231) do
 
   create_table "questions", :force => true do |t|
-    t.integer  "type"
+    t.integer  "q_type"
     t.boolean  "orientation"
     t.text     "text"
     t.datetime "created_at",  :null => false

@@ -1,8 +1,8 @@
 class Question < ActiveRecord::Base
-  attr_accessible :orientation, :text, :type
+  attr_accessible :orientation, :text, :q_type
 
   def question_type
-  	case type
+  	case q_type
   	when 0
   		return "Economic"
   	when 1
