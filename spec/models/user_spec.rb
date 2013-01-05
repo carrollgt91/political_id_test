@@ -1,5 +1,4 @@
 require 'spec_helper'
-require 'pry'
 
 describe User do
 	before { @user = User.new(name: "Sample User", email:"test@example.com") }
