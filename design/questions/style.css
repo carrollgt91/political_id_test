@@ -213,3 +213,13 @@ margin-left: 35px;
 {
 margin-left: 398px;
 }
+
+#result
+{
+text-align: center;
+position: fixed;
+bottom: 50%;
+margin-bottom: -50px;
+left: 50%;
+margin-left: -282px;
+}
