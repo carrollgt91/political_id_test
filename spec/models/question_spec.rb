@@ -1,7 +1,10 @@
 require 'spec_helper'
 
 describe Question do
-	before { @ques = Question.new(orientation: true, text: "Test Question", q_type: 0) }
+	before do
+	 @ques = Question.new(orientation: true, text: "As a means to balance the budget, the government should decrease spending rather than increase taxes.", q_type: 0) 
+	 @ques.save
+	end
 
 	subject { @ques }
 
@@ -14,5 +17,20 @@ describe Question do
 			@ques.question_type.should == "Economic"
 		end
 	end
+	describe "when type is 1" do
+		before { @ques.q_type = 1 }
+		it "should be an social question" do
+			@ques.question_type.should == "Social"
+		end
+	end
+	describe "when type is 2" do
+		before { @ques.q_type = 2 }
+		it "should be an foregin policy question" do
+			@ques.question_type.should == "Foreign"
+		end
+	end
+
+
+
 
 end

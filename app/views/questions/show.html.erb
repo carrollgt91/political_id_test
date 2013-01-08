@@ -1,11 +1,146 @@
-<h1>Questions#show</h1>
-<p>Find me in app/views/questions/show.html.erb</p>
 
-<%= @ques.text %>
-<br>
-<%= @ques.orientation %>
-<br>
-<%= @ques.question_type %>
-<br>
+<div id="last">
+	<a href="#">< last</a>
+</div>
+<div id="next">
+	<a href="#">next ></a>
+</div>
 
+<form>
+<table class="main">
+<tr>
+<td colspan="5"><h2 class="question"><%= @ques.text %></h2></td>
+</tr>
+<tr>
+<td><input type="radio" name="response" value="stronglyDisagree" /></td>
+<td><input type="radio" name="response" value="disagree" /></td>
+<td rowspan="2" class="info"><p><a class="more" href="#discussion">more info</a></p></td>
+<td><input type="radio" name="response" value="agree" /></td>
+<td><input type="radio" name="response" value="stronglyAgree" /></td>
+</tr>
+<tr>
+<td><p>strongly disagree</p></td>
+<td><p>disagree</p></td>
+<td><p>agree</p></td>
+<td><p>strongly agree</p></td>
+</tr>
+</table>
+</form>
 
+<form>
+<table id="progress">
+<tr>
+<td><p>90%</p></td>
+<td><p>100%</p></td>
+<td><p>100%</p></td>
+</tr>
+<tr>
+<td><p>economic</p></td>
+<td><p>social</p></td>
+<td><p>foreign</p></td>
+</tr>
+</table>
+</form>
+
+<form>
+<table id="rate">
+<tr>
+<td colspan="2"><p>rate this question:</p></td>
+</tr>
+<tr>
+<td><p><a class="like" href="#">like</a> 78%</p></td>
+<td><p><a class="dislike" href="#">dislike</a> 22%</p></td>
+</tr>
+</table>
+</form>
+
+<div style="display:none;"><!--fancybox-->
+<div id="discussion">
+<div id="to"><h3 class="oif">Those Opposed:</h3></div>
+<div id="tif"><h3 class="oif">Those In Favor:</h3></div>
+<div class="opposed">
+	<div class="post">
+		<h5 class="user">UserName1:</h5>
+		<p>"I am strongly opposed to this statement because lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent malesuada, lacus vel lobortis mollis, leo nisi fermentum mauris, sit amet rutrum erat justo et lorem. Vestibulum a cursus elit. Pellentesque nisl enim, suscipit ut ultrices eu, gravida nec nibh. Etiam tincidunt fringilla risus, quis blandit mauris eleifend eget. Ut sit amet magna non urna dapibus mollis. Ut quam diam, dictum ac egestas eget, gravida a libero. Sed id nibh sapien, at consectetur diam. Vestibulum non mauris posuere justo consequat dapibus."<p>
+	</div><!--post-->
+		<h6><a class="like" href="#">like</a> 81%</h6>
+		<h6><a class="dislike" href="#">dislike</a> 19%</h6>
+		<h6 class="drop">respond</h6>
+			<div class="responses">
+				<div class="aresponse">
+					<textarea>@UserName1 </textarea>
+					<input type="submit" value="done" class="done">
+				</div>
+			</div>
+	<div class="post">
+		<h5 class="user">UserName3:</h5>
+		<p>"I am strongly opposed to this statement because lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent malesuada, lacus vel lobortis mollis, leo nisi fermentum mauris, sit amet rutrum erat justo et lorem. Vestibulum a cursus elit. Pellentesque nisl enim, suscipit ut ultrices eu, gravida nec nibh. Etiam tincidunt fringilla risus, quis blandit mauris eleifend eget. Ut sit amet magna non urna dapibus mollis. Ut quam diam, dictum ac egestas eget, gravida a libero. Sed id nibh sapien, at consectetur diam. Vestibulum non mauris posuere justo consequat dapibus."<p>
+	</div><!--post-->
+		<h6><a class="like" href="#">like</a> 53%</h6>
+		<h6><a class="dislike" href="#">dislike</a> 47%</h6>
+		<h6 class="drop">respond</h6>
+			<div class="responses">
+				<div class="aresponse">
+					<textarea>@UserName3 </textarea>
+					<input type="submit" value="done" class="done">
+				</div>
+			</div>
+	<div class="post">
+		<h5 class="user">UserName5:</h5>
+		<p>"I am strongly opposed to this statement because lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent malesuada, lacus vel lobortis mollis, leo nisi fermentum mauris, sit amet rutrum erat justo et lorem. Vestibulum a cursus elit. Pellentesque nisl enim, suscipit ut ultrices eu, gravida nec nibh. Etiam tincidunt fringilla risus, quis blandit mauris eleifend eget. Ut sit amet magna non urna dapibus mollis. Ut quam diam, dictum ac egestas eget, gravida a libero. Sed id nibh sapien, at consectetur diam. Vestibulum non mauris posuere justo consequat dapibus."<p>
+	</div><!--post-->
+		<h6><a class="like" href="#">like</a> 13%</h6>
+		<h6><a class="dislike" href="#">dislike</a> 87%</h6>
+		<h6 class="drop">respond</h6>
+			<div class="responses">
+				<div class="aresponse">
+					<textarea>@UserName5 </textarea>
+					<input type="submit" value="done" class="done">
+				</div>
+			</div>
+</div><!--opposed-->
+
+<div class="infavor">
+	<div class="post">
+		<h5 class="user">UserName2:</h5>
+		<p>"I am strongly in favor of this statement because lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent malesuada, lacus vel lobortis mollis, leo nisi fermentum mauris, sit amet rutrum erat justo et lorem. Vestibulum a cursus elit. Pellentesque nisl enim, suscipit ut ultrices eu, gravida nec nibh. Etiam tincidunt fringilla risus, quis blandit mauris eleifend eget. Ut sit amet magna non urna dapibus mollis. Ut quam diam, dictum ac egestas eget, gravida a libero. Sed id nibh sapien, at consectetur diam. Vestibulum non mauris posuere justo consequat dapibus."<p>
+	</div><!--post-->
+		<h6><a class="like" href="#">like</a> 92%</h6>
+		<h6><a class="dislike" href="#">dislike</a> 8%</h6>
+		<h6 class="drop">respond</h6>
+			<div class="responses">
+				<div class="aresponse">
+					<textarea>@UserName2 </textarea>
+					<input type="submit" value="done" class="done">
+				</div>
+			</div>
+	<div class="post">
+		<h5 class="user">UserName4:</h5>
+		<p>"I am strongly in favor of this statement because lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent malesuada, lacus vel lobortis mollis, leo nisi fermentum mauris, sit amet rutrum erat justo et lorem. Vestibulum a cursus elit. Pellentesque nisl enim, suscipit ut ultrices eu, gravida nec nibh. Etiam tincidunt fringilla risus, quis blandit mauris eleifend eget. Ut sit amet magna non urna dapibus mollis. Ut quam diam, dictum ac egestas eget, gravida a libero. Sed id nibh sapien, at consectetur diam. Vestibulum non mauris posuere justo consequat dapibus."<p>
+	</div><!--post-->
+		<h6><a class="like" href="#">like</a> 78%</h6>
+		<h6><a class="dislike" href="#">dislike</a> 22%</h6>
+		<h6 class="drop">respond</h6>
+			<div class="responses">
+				<div class="aresponse">
+					<textarea>@UserName4 </textarea>
+					<input type="submit" value="done" class="done">
+				</div>
+			</div>
+	<div class="post">
+		<h5 class="user">UserName6:</h5>
+		<p>"I am strongly in favor of this statement because lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent malesuada, lacus vel lobortis mollis, leo nisi fermentum mauris, sit amet rutrum erat justo et lorem. Vestibulum a cursus elit. Pellentesque nisl enim, suscipit ut ultrices eu, gravida nec nibh. Etiam tincidunt fringilla risus, quis blandit mauris eleifend eget. Ut sit amet magna non urna dapibus mollis. Ut quam diam, dictum ac egestas eget, gravida a libero. Sed id nibh sapien, at consectetur diam. Vestibulum non mauris posuere justo consequat dapibus."<p>
+	</div><!--post-->
+		<h6><a class="like" href="#">like</a> 54%</h6>
+		<h6><a class="dislike" href="#">dislike</a> 46%</h6>
+		<h6 class="drop">respond</h6>
+			<div class="responses">
+				<div class="aresponse">
+					<textarea>@UserName6 </textarea>
+					<input type="submit" value="done" class="done">
+				</div>
+			</div>
+</div><!--infavor-->
+<div style="clear: both;"></div><!--empty-->
+</div><!--/discussion-->
+</div><!--/fancybox-->
