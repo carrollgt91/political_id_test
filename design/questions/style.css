@@ -45,7 +45,7 @@ font-family: 'Quicksand', sans-serif;
 text-shadow: 1px 1px 5px black;
 }
 
-a:active
+#next a:active, #last a:active
 {
 color: grey;
 text-shadow: 1px 1px 5px grey;
@@ -154,6 +154,24 @@ margin: auto;
 display: inline;
 margin: 0px;
 vertical-align: top;
+}
+
+#discussion p
+{
+font-family: sans-serif;
+font-weight: normal;
+}
+
+.post a
+{
+font-family: sans-serif;
+font-size: 14px;
+color: dimgrey;
+}
+
+.post a:hover
+{
+text-decoration: underline;
 }
 
 #discussion .like
