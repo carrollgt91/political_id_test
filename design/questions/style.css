@@ -55,17 +55,17 @@ text-shadow: 1px 1px 5px grey;
 {
 font-size: 24px;
 position: fixed;
-top: 20%;
+top: 50px;
 }
 
 #last
 {
-left: 10%;
+left: 50px;
 }
 
 #next
 {
-right: 10%;
+right: 50px;
 }
 
 .main
@@ -116,17 +116,27 @@ margin-left: -212px;
 width: 101px;
 }
 
-.like:hover
+#rate .like
+{
+vertical-align: middle;
+}
+
+#rate .dislike
+{
+vertical-align: middle;
+}
+
+/*.like:hover
 {
 color: green;
-text-shadow: 0px 0px 3px green;
+box-shadow: 0px 0px 3px green;
 }
 
 .dislike:hover
 {
 color: red;
 text-shadow: 0px 0px 3px red;
-}
+}*/
 
 #rate a:hover
 {
@@ -139,10 +149,16 @@ width: 960px;
 margin: auto;
 }
 
-h6
+#discussion h6
 {
-text-align: right;
+display: inline;
 margin: 0px;
+vertical-align: top;
+}
+
+#discussion .like
+{
+margin-left: 340px;
 }
 
 .drop
@@ -160,6 +176,11 @@ cursor: pointer;
 {
 width: 470px;
 float: left;
+}
+
+#tif
+{
+padding-left: 20px;
 }
 
 .oif, h6, h5
@@ -194,8 +215,27 @@ padding-left: 10px;
 
 .aresponse
 {
-color: dimgrey;
-padding-bottom: 10px;
-border-bottom: 1px solid lightgrey;
 margin-bottom: 10px;
+}
+
+.responses textarea
+{
+height: 75px;
+width: 400px;
+margin-left: 35px;
+}
+
+.done
+{
+margin-left: 398px;
+}
+
+#result
+{
+text-align: center;
+position: fixed;
+bottom: 50%;
+margin-bottom: -50px;
+left: 50%;
+margin-left: -282px;
 }
