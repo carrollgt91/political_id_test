@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130105033231) do
+ActiveRecord::Schema.define(:version => 20130116151146) do
 
   create_table "questions", :force => true do |t|
     t.integer  "q_type"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(:version => 20130105033231) do
     t.string   "email"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "fb_id"
   end
 
 end
