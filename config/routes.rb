@@ -1,5 +1,13 @@
 PoliticalIdTest::Application.routes.draw do
 
+  get "user/create"
+
+  get "user/show"
+
+  get "user/delete"
+
+  get "user/edit"
+
   get "static_pages/home"
 
   get "static_pages/help"
@@ -8,6 +16,11 @@ PoliticalIdTest::Application.routes.draw do
 
   get "survey/home"
   post "survey/submit"
+
+  match "profile" => "users#show"
+  match "signup", to: redirect('/auth/facebook')
+  match "login" => "sessions#create"
+  match "/auth/facebook/callback" => "sessions#create"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
