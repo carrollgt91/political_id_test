@@ -24,7 +24,8 @@ PoliticalIdTest::Application.routes.draw do
 
   match "profile" => "users#show"
   match "signup", to: redirect('/auth/facebook')
-  match "login" => "sessions#create"
+  match "login", to: redirect('/auth/facebook')
+  match "logout", to: "sessions#destroy"
   match "/auth/facebook/callback" => "sessions#create"
 
   # The priority is based upon order of creation:

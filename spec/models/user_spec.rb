@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe User do
-	before { @user = User.new(name: "Sample User", email:"test@example.com") }
+	before { @user = User.new(name: "Sample User", email:"test@example.com", oauth_token: "12345", fb_id: "12345" ) }
 
 	subject { @user }
 
@@ -25,17 +25,14 @@ describe User do
 		it { should_not be_valid }
 	end
 
+	describe "when oauth_token is not present" do
+		before { @user.oauth_token = "" }
+		it { should_not be_valid }
+	end
 
-	describe "when email format is invalid" do
-
-		it "should not be valid" do
-			addresses = %w[user@foo,com user_at_foo.org example.user@foo. foo@bar_baz.com foo@bar+bax.com]
-			addresses.each do |invalid_address|
-				@user.email = invalid_address
-				@user.should_not be_valid
-			end
-
-		end
+	describe "when fb_id is not present" do
+		before { @user.fb_id = "" }
+		it { should_not be_valid }
 	end
 
 	describe "when email format is valid" do

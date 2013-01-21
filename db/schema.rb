@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130116151146) do
+ActiveRecord::Schema.define(:version => 20130119020153) do
 
   create_table "questions", :force => true do |t|
     t.integer  "q_type"
@@ -32,9 +32,12 @@ ActiveRecord::Schema.define(:version => 20130116151146) do
   create_table "users", :force => true do |t|
     t.string   "name"
     t.string   "email"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
     t.string   "fb_id"
+    t.string   "oauth_token"
+    t.string   "pic_url"
+    t.datetime "oauth_expires_at"
   end
 
 end
