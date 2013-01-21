@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe User do
-	before { @user = User.new(name: "Sample User", email:"test@example.com", oauth_token: "12345", fb_id: "12345" ) }
+	before { @user = User.new(name: "Sample User", email:"test@example.com", oauth_token: "12345", fb_id: "12345", pic_url: "https://sphotos-a.xx.fbcdn.net/hphotos-ash4/430883_10151367037281294_116949034_n.jpg" ) }
 
 	subject { @user }
 
