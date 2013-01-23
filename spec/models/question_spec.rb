@@ -12,6 +12,22 @@ describe Question do
 	it { should respond_to(:text) }
 	it { should respond_to(:q_type) }
 
+	it { should be_valid }
+
+	describe "when text is not present" do
+		before { @ques.text = "" }
+		it { should_not be_valid }
+	end	
+
+	describe "when q_type is not present" do
+		before { @ques.q_type = nil }
+		it { should_not be_valid }
+	end
+	describe "when orientation is not present" do
+		before { @ques.orientation = nil }
+		it { should_not be_valid }
+	end
+
 	describe "when type is 0" do
 		it "should be an economic question" do
 			@ques.question_type.should == "Economic"

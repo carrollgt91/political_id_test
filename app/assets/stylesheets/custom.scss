@@ -2,6 +2,7 @@
 
 /* universal */
 
+
 html {
   overflow-y: scroll;
 }
@@ -24,4 +25,21 @@ textarea {
 
 .center h1 {
   margin-bottom: 10px;
+}
+
+.question_form {
+	width:100%;
+}
+
+.question_form textarea {
+	height: 40px;
+  margin-top: 15px;
+  width: 100%;
+}
+
+.question_form label {
+	display:inline;
+}
+.question_form .radio_wrap {
+	margin: 10px 5px;
 }

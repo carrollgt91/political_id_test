@@ -1,5 +1,6 @@
 class Question < ActiveRecord::Base
   attr_accessible :orientation, :text, :q_type
+  validates :text, :q_type, :orientation, presence: true
 
   def question_type
   	case q_type
@@ -10,6 +11,17 @@ class Question < ActiveRecord::Base
   	when 2
   		return "Foreign"
   	end
+  end
+
+  def self.to_q_type(type)
+    case type
+    when "Economic"
+      return 0
+    when "Social"
+      return 1
+    when "Foreign"
+      return 2
+    end
   end
   
 end

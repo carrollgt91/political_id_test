@@ -1,12 +1,7 @@
 PoliticalIdTest::Application.routes.draw do
 
-  get "user/create"
 
   get "user/show"
-
-  get "user/delete"
-
-  get "user/edit"
 
   get "static_pages/home"
 
