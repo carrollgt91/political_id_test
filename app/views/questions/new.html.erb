@@ -1,28 +1,30 @@
-<h1>Create a question: </h1>
 <div class="row">
-	<div class="span6">
-		<%= form_for @question, url: { action:"create"}, html:{ :class => "question_form center" } do |f| %>
-			<%= f.label(:q_text, "Text:") %>
-			<%= f.text_area :text %>
+	<div class="span6 offset3">
+		<div class="center">
+			<h1>Create a question: </h1>
+			<%= form_for @question, url: { action:"create"}, html:{ :class => "question_form center" } do |f| %>
+				<%= f.label(:q_text, "Text:") %>
+				<%= f.text_area :text %>
 
-			<%= f.label(:q_type, "Type:") %>
-			<div class="radio_wrap">
-				<%= f.radio_button(:q_type, 0) %>
-				<%= f.label(:economic_q, "Economic") %>
-				<%= f.radio_button(:q_type, 1) %>
-				<%= f.label(:social_q, "Social") %>
-				<%= f.radio_button(:q_type, 2) %>
-				<%= f.label(:foreign_policy_q, "Foreign Policy") %>
-			</div>
+				<%= f.label(:q_type, "Type:") %>
+				<div class="radio_wrap">
+					<%= f.radio_button(:q_type, 0) %>
+					<%= f.label(:economic_q, "Economic") %>
+					<%= f.radio_button(:q_type, 1) %>
+					<%= f.label(:social_q, "Social") %>
+					<%= f.radio_button(:q_type, 2) %>
+					<%= f.label(:foreign_policy_q, "Foreign Policy") %>
+				</div>
 
-			<%= f.label(:q_orientation, "Orientation:") %>
-			<div class="radio_wrap">
-				<%= f.radio_button(:orientation, true) %>
-				<%= f.label(:f_orientation, "Forward") %>
-				<%= f.radio_button(:orientation, false) %>
-				<%= f.label(:f_orientation, "Backward") %>
-			</div>
-			<%= f.submit "Create" %>
-		<% end %>
+				<%= f.label(:q_orientation, "Orientation:") %>
+				<div class="radio_wrap">
+					<%= f.radio_button(:orientation, true) %>
+					<%= f.label(:f_orientation, "Forward") %>
+					<%= f.radio_button(:orientation, false) %>
+					<%= f.label(:f_orientation, "Backward") %>
+				</div>
+				<%= f.submit "Create" %>
+			<% end %>
+		</div>
 	</div>
 </div>
