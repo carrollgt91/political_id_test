@@ -1,8 +1,8 @@
 class CreateResponses < ActiveRecord::Migration
   def change
     create_table :responses do |t|
-      t.int :answer
-      
+      t.integer :answer
+
       t.references :user
       t.references :question
 

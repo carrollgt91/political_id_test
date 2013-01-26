@@ -1,3 +1,9 @@
 class Response < ActiveRecord::Base
-  attr_accessible :answer, :responsive_id, :responsive_type
+  attr_accessible :answer
+
+  belongs_to :user
+  belongs_to :question
+
+  validates :answer, :user_id, :question_id, presence: true
+
 end

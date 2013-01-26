@@ -1,6 +1,9 @@
 class Question < ActiveRecord::Base
   attr_accessible :orientation, :text, :q_type
+
   validates :text, :q_type, :orientation, presence: true
+  
+  has_many :responses
 
   def question_type
   	case q_type

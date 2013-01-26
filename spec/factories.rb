@@ -1,7 +1,12 @@
 FactoryGirl.define do
+	
   factory :user do
-    name     "Sample User"
-    email    "sample@example.com"
+    name     				"Beni Hana"
+    email    				"benihana1011@gmail.com"
+    fb_id						"100005072196289"
+    pic_url					"http://graph.facebook.com/100005072196289/picture?type=square"
+    oauth_token			"test_token"
+    oauth_expires_at { Date.new.next_week }
   end
 
   factory :question do
@@ -9,4 +14,5 @@ FactoryGirl.define do
   	orientation 	true
   	q_type  			0
   end
+
 end

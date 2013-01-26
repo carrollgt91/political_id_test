@@ -1,9 +1,11 @@
 class User < ActiveRecord::Base
   attr_accessible :email, :name, :oauth_token, :oauth_expires_at, :fb_id, :pic_url
-  validates :name, :email, :fb_id, :oauth_token, :pic_url, presence: true
+
+  validates :name, :email, :fb_id, :oauth_token, :oauth_expires_at, :pic_url, presence: true
   validates :name, length: { maximum: 50 }
   validates :email,	uniqueness: { case_sensitive: false }
 
+  has_many :responses
 
 
   def self.from_omniauth(auth)
