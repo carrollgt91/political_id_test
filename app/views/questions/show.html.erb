@@ -7,7 +7,7 @@
 
 <% if @ques.next %>	
 		<div id="next">
-		<%= link_to "next >", @ques.next %>
+		<%= button_to "next >", :controller => :questions, :action => :next %>
 	</div>
 <% end %>
 

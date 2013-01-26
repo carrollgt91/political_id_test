@@ -30,6 +30,10 @@ class QuestionsController < ApplicationController
     q.delete
   end
 
+  def next
+    binding.pry
+  end
+
   def show
     @ques = Question.find(params[:id])
   end
