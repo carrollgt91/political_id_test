@@ -47,5 +47,6 @@ class QuestionsController < ApplicationController
 
   def show
     @ques = Question.find(params[:id])
+    @response = Response.find_by_user_id_and_question_id(current_user.id, @ques.id)
   end
 end

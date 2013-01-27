@@ -37,8 +37,13 @@
 <%= submit_tag("Submit", :controller => :questions, :action => :next, :class => "submit_question") %>
 <% end %>
 
-
-
+<% if @response %>
+	<div class="row">
+		<div class="span6 offset3">
+			<h3 class=> Current response: <%= @response.string_answer %>
+		</div>
+	</div>
+<% end %>
 
 <form>
 <table id="progress">
