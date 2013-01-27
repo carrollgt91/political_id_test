@@ -31,7 +31,18 @@ class QuestionsController < ApplicationController
   end
 
   def next
-    binding.pry
+
+    qid = params[:question_id].to_i
+
+    response = Response.find_or_create_by_user_id_and_question_id(current_user.id, qid)
+
+    response.answer = params[:answer]
+
+    if(response.save)
+      redirect_to Question.find(qid+1)
+    else
+      render Question.find(qid)
+    end
   end
 
   def show

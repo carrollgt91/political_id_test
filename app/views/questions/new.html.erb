@@ -2,7 +2,7 @@
 	<div class="span6 offset3">
 		<div class="center">
 			<h1>Create a question: </h1>
-			<%= form_for @question, url: { action:"create"}, html:{ :class => "question_form center" } do |f| %>
+			<%= form_for @question, url: { action:"create"}, html:{ :class => "change_question_form center" } do |f| %>
 				<%= f.label(:q_text, "Text:") %>
 				<%= f.text_area :text %>
 

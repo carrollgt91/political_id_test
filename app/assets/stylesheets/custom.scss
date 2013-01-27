@@ -27,19 +27,25 @@ textarea {
   margin-bottom: 10px;
 }
 
-.question_form {
+.change_question_form {
 	width:100%;
 }
 
-.question_form textarea {
+.change_question_form textarea {
 	height: 40px;
   margin-top: 15px;
   width: 100%;
 }
 
-.question_form label {
+.change_question_form label {
 	display:inline;
 }
-.question_form .radio_wrap {
+
+.change_question_form .radio_wrap {
 	margin: 10px 5px;
+}
+
+.submit_question {
+  display:block;
+  margin: 35% auto;
 }

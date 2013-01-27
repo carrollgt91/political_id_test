@@ -1,8 +1,8 @@
-<h1>Edit a question: </h1>
 <div class="row">
-	<div class="span6">
+	<div class="span6 offset3">
+	<h1>Edit a question: </h1>
 		<div class="center">
-			<%= form_for @question, url: { action:"update"}, html:{ :class => "question_form center" } do |f| %>
+			<%= form_for @question, url: { action:"update"}, html:{ :class => "change_question_form center" } do |f| %>
 				<%= f.label(:q_text, "Text:") %>
 				<%= f.text_area :text %>
 

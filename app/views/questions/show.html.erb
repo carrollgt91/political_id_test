@@ -7,30 +7,38 @@
 
 <% if @ques.next %>	
 		<div id="next">
-		<%= button_to "next >", :controller => :questions, :action => :next %>
+		<!-- <%= button_to "next >", :controller => :questions, :action => :next %> -->
+		<%= link_to "next >", @ques.next %>
 	</div>
 <% end %>
 
-<form>
+
+
 <table class="main">
 <tr>
 <td colspan="5"><h2 class="question"><%= @ques.text %></h2></td>
 </tr>
-<tr>
-<td><input type="radio" name="response" value="stronglyDisagree" /></td>
-<td><input type="radio" name="response" value="disagree" /></td>
-<td rowspan="2" class="info"><p><a class="more" href="#discussion">more info</a></p></td>
-<td><input type="radio" name="response" value="agree" /></td>
-<td><input type="radio" name="response" value="stronglyAgree" /></td>
-</tr>
-<tr>
-<td><p>strongly disagree</p></td>
-<td><p>disagree</p></td>
-<td><p>agree</p></td>
-<td><p>strongly agree</p></td>
-</tr>
+	<tr>
+		
+			<%= form_tag("/questions/next", :method => "post", :class => "response_form") do %>
+
+				<td><%= radio_button_tag(:answer, 0) %>
+				<%= label_tag(:answer_s_disagree, "Strongly Disagree") %></td>
+				<td><%= radio_button_tag(:answer, 1) %>
+				<%= label_tag(:answer_disagree, "Disagree") %></td>
+				<td><%= radio_button_tag(:answer, 2) %>
+				<%= label_tag(:answer_agree, "Agree") %></td>
+				<td><%= radio_button_tag(:answer, 3) %>
+				<%= label_tag(:answer_s_agree, "Strongly Agree") %></td>
+				<%= hidden_field_tag "question_id", @ques.id %>
+	</tr>
 </table>
-</form>
+
+<%= submit_tag("Submit", :controller => :questions, :action => :next, :class => "submit_question") %>
+<% end %>
+
+
+
 
 <form>
 <table id="progress">
