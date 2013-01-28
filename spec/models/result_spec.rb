@@ -2,7 +2,12 @@ require 'spec_helper'
 
 describe Result do
 	let(:user) { FactoryGirl.create(:user) }
-	before { @result = Result.new(economic_score: 50, social_score: 100, foreign_p_score: 0, user_id:user.id) }
+	before do 
+		@result = Result.new(economic_score: 50, social_score: 100, foreign_p_score: 0, user_id:user.id)
+		@result.economic_response_count = 10
+		@result.social_response_count = 10
+		@result.foreign_p_response_count = 10
+	end
 
 	subject { @result }
 
