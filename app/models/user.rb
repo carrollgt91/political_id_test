@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
   has_one :result
 
   def create_result
-    result = Result.new(social_score:50, economic_score:50, foreign_p_score:50,social_results_count:0, economic_results_count:0, foreign_p_results_count:0, user_id:self.id)
+    result = Result.new(social_score:50, economic_score:50, foreign_p_score:50,social_response_count:0, economic_response_count:0, foreign_p_response_count:0, user_id:self.id)
     result.save
   end
 

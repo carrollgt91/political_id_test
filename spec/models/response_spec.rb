@@ -2,8 +2,9 @@ require 'spec_helper'
 
 describe Response do
 
-	let(:user) { FactoryGirl.create(:user) }
+	let(:user) { FactoryGirl.create(:user_with_result) }
 	let(:question) { FactoryGirl.create(:question) }
+
 
 	before do
 	 @response = Response.new
