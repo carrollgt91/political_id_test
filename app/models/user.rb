@@ -1,11 +1,20 @@
 class User < ActiveRecord::Base
   attr_accessible :email, :name, :oauth_token, :oauth_expires_at, :fb_id, :pic_url
 
+  after_commit :create_result, :on => :create
+    
+
   validates :name, :email, :fb_id, :oauth_token, :oauth_expires_at, :pic_url, presence: true
   validates :name, length: { maximum: 50 }
   validates :email,	uniqueness: { case_sensitive: false }
 
   has_many :responses
+  has_one :result
+
+  def create_result
+    result = Result.new(social_score:50, economic_score:50, foreign_p_score:50, user_id:self.id)
+    result.save
+  end
 
 
   def self.from_omniauth(auth)

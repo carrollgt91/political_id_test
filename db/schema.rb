@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130126202706) do
+ActiveRecord::Schema.define(:version => 20130127222924) do
 
   create_table "questions", :force => true do |t|
     t.integer  "q_type"
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(:version => 20130126202706) do
     t.integer  "foreign_p_score"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
+    t.integer  "user_id"
   end
 
   create_table "users", :force => true do |t|
