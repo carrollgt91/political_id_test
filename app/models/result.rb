@@ -5,8 +5,12 @@ class Result < ActiveRecord::Base
   
   belongs_to :user
 
-  def calculate_score
-  	
+  def calculate_score(response)
+  	case Question.find(response.question_id).q_type
+  	when 0 #economic
+		when 1 #social
+		when 2 #foreign_p
+  	end
   end
 
 end
