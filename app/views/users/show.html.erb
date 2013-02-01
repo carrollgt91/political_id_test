@@ -1,5 +1,8 @@
 <% @user = current_user %>
 <%= image_tag(@user.pic_url, alt: "Facebook Profile Picture") %>
 <h1><%= @user.name %> </h1>
+<br>
 
-
+<h3> Economic: <%= @user.result.economic_result %> </h3>
+<h3> Social: <%= @user.result.social_result %> </h3>
+<h3> Foreign Policy: <%= @user.result.foreign_p_result %> </h3>

@@ -6,7 +6,6 @@ class Result < ActiveRecord::Base
   belongs_to :user
 
   def calculate_score(response)
-    binding.pry
     if(response.id)
       recalculate_score(response)
     else
@@ -22,11 +21,11 @@ class Result < ActiveRecord::Base
 
     case Question.find(response.question_id).q_type
     when 0 #economic
-      economic_score = economic_score - (sign*old_response.answer) + (sign*response.answer)
+      self.economic_score = self.economic_score - (sign*old_response.answer) + (sign*response.answer)
     when 1 #social
-      social_score = social_score - (sign*old_response.answer) + (sign*response.answer)
+      self.social_score = self.social_score - (sign*old_response.answer) + (sign*response.answer)
     when 2 #foreign_p
-      foreign_p_score = foreign_p_score - (sign*old_response.answer) + (sign*response.answer)
+      self.foreign_p_score = self.foreign_p_score - (sign*old_response.answer) + (sign*response.answer)
     end
   end
 
@@ -36,11 +35,37 @@ class Result < ActiveRecord::Base
 
     case Question.find(response.question_id).q_type
     when 0 #economic
-      economic_score = economic_score + (sign*response.answer)
+      self.economic_score = self.economic_score + (sign*response.answer)
     when 1 #social
-      social_score = social_score + (sign*response.answer)
+      self.social_score = self.social_score + (sign*response.answer)
     when 2 #foreign_p
-      foreign_p_score = foreign_p_score + (sign*response.answer)
+      self.foreign_p_score = self.foreign_p_score + (sign*response.answer)
     end
   end
+
+
+  def economic_result
+    if economic_response_count > 3
+      self.economic_score/self.economic_response_count 
+    else
+      "Not enough responses! Answer more economic questions."
+    end
+  end
+
+  def social_result
+     if social_response_count > 3
+      self.social_score/self.social_response_count 
+    else
+      "Not enough responses! Answer more social questions."
+    end
+  end
+
+  def foreign_p_result
+     if foreign_p_response_count > 3
+      self.foreign_p_score/self.foreign_p_response_count 
+    else
+      "Not enough responses! Answer more foreign policy questions."
+    end
+  end
+
 end
