@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Response do
 
 	let(:user) { FactoryGirl.create(:user_with_result) }
-	let(:question) { FactoryGirl.create(:question) }
+	let(:question) { FactoryGirl.create(:question, :type => 2, :orient => true) }
 
 
 	before do

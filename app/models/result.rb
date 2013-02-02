@@ -17,29 +17,26 @@ class Result < ActiveRecord::Base
   def recalculate_score(response)
     old_response = response.user.responses(response.id)
     question = Question.find(response.question_id)
-    sign = question.orientation ? 1 : -1
-
+    
     case Question.find(response.question_id).q_type
     when 0 #economic
-      self.economic_score = self.economic_score - (sign*old_response.answer) + (sign*response.answer)
+      self.economic_score = self.economic_score - (old_response.answer) + (response.answer)
     when 1 #social
-      self.social_score = self.social_score - (sign*old_response.answer) + (sign*response.answer)
+      self.social_score = self.social_score - (old_response.answer) + (response.answer)
     when 2 #foreign_p
-      self.foreign_p_score = self.foreign_p_score - (sign*old_response.answer) + (sign*response.answer)
+      self.foreign_p_score = self.foreign_p_score - (old_response.answer) + (response.answer)
     end
   end
 
   def calculate_new_score(response)
     question = Question.find(response.question_id)
-    sign = question.orientation ? 1 : -1
-
     case Question.find(response.question_id).q_type
     when 0 #economic
-      self.economic_score = self.economic_score + (sign*response.answer)
+      self.economic_score = self.economic_score + (response.answer)
     when 1 #social
-      self.social_score = self.social_score + (sign*response.answer)
+      self.social_score = self.social_score + (response.answer)
     when 2 #foreign_p
-      self.foreign_p_score = self.foreign_p_score + (sign*response.answer)
+      self.foreign_p_score = self.foreign_p_score + (response.answer)
     end
   end
 

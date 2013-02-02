@@ -46,6 +46,11 @@ describe Question do
 		end
 	end
 
+	describe"when orientation is backwards" do
+		before { @ques.orientation = false }
+		it { should be_valid }
+	end
+
 
 
 

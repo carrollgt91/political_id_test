@@ -1,9 +1,9 @@
 FactoryGirl.define do
 	
   factory :result, class: Result do
-    social_score 50
-    economic_score 50
-    foreign_p_score 50
+    social_score 10
+    economic_score 10
+    foreign_p_score 10
 
     economic_response_count  0
     social_response_count 0
@@ -32,9 +32,15 @@ FactoryGirl.define do
   end
 
   factory :question do
+    ignore do
+      type      rand(1..3)
+      orient [true,false].sample
+    end
+
   	text 					"As a means to balance the budget, the government should decrease spending rather than increase taxes."
-  	orientation 	true
-  	q_type  			0
+    orientation { orient }
+    q_type { type }
+
   end
 
 end

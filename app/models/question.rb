@@ -1,7 +1,8 @@
 class Question < ActiveRecord::Base
   attr_accessible :orientation, :text, :q_type
 
-  validates :text, :q_type, :orientation, presence: true
+  validates :text, :q_type, presence: true
+  validates :orientation, :inclusion => {:in => [true, false] }
   
   has_many :responses
 
