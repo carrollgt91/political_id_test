@@ -14,7 +14,7 @@ PoliticalIdTest::Application.routes.draw do
   match '/signin', to: 'sessions#new'
   match '/signout', to: 'sessions#destroy', via: :delete
 
-  post "questions/next"
+  post "questions/respond"
 
   match "profile" => "users#show"
   match "signup", to: redirect('/auth/facebook')

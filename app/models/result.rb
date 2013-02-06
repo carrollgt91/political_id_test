@@ -15,7 +15,7 @@ class Result < ActiveRecord::Base
 
 
   def recalculate_score(response)
-    old_response = response.user.responses(response.id)
+    old_response = Response.find(response.id)
     question = Question.find(response.question_id)
     
     case Question.find(response.question_id).q_type
@@ -26,6 +26,7 @@ class Result < ActiveRecord::Base
     when 2 #foreign_p
       self.foreign_p_score = self.foreign_p_score - (old_response.answer) + (response.answer)
     end
+    save
   end
 
   def calculate_new_score(response)
@@ -33,17 +34,21 @@ class Result < ActiveRecord::Base
     case Question.find(response.question_id).q_type
     when 0 #economic
       self.economic_score = self.economic_score + (response.answer)
+      self.economic_response_count += 1
     when 1 #social
       self.social_score = self.social_score + (response.answer)
+      self.social_response_count += 1
     when 2 #foreign_p
       self.foreign_p_score = self.foreign_p_score + (response.answer)
+      self.foreign_p_response_count += 1
     end
+    save
   end
 
 
   def economic_result
     if economic_response_count > 3
-      self.economic_score/self.economic_response_count 
+      25*(self.economic_score/self.economic_response_count)
     else
       "Not enough responses! Answer more economic questions."
     end
@@ -51,7 +56,7 @@ class Result < ActiveRecord::Base
 
   def social_result
      if social_response_count > 3
-      self.social_score/self.social_response_count 
+      25*(self.social_score/self.social_response_count)
     else
       "Not enough responses! Answer more social questions."
     end
@@ -59,7 +64,7 @@ class Result < ActiveRecord::Base
 
   def foreign_p_result
      if foreign_p_response_count > 3
-      self.foreign_p_score/self.foreign_p_response_count 
+      25*(self.foreign_p_score/self.foreign_p_response_count)
     else
       "Not enough responses! Answer more foreign policy questions."
     end

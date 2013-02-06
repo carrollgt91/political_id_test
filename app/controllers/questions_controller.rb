@@ -30,15 +30,14 @@ class QuestionsController < ApplicationController
     q.delete
   end
 
-  def next
-
+  def respond
     qid = params[:question_id].to_i
+    question = Question.find(qid)
 
     response = Response.find_or_create_by_user_id_and_question_id(current_user.id, qid)
-
-    answer = question.orientation ? params[:answer] : 4 - params[:answer]
+    answer = question.orientation ? params[:answer] : 3 - params[:answer]
     
-    response.answer = answer
+    response.answer = answer.to_i
 
     if(response.save)
       redirect_to Question.find(qid+1)

@@ -7,7 +7,6 @@
 
 <% if @ques.next %>	
 		<div id="next">
-		<!-- <%= button_to "next >", :controller => :questions, :action => :next %> -->
 		<%= link_to "next >", @ques.next %>
 	</div>
 <% end %>
@@ -20,7 +19,7 @@
 </tr>
 	<tr>
 		
-			<%= form_tag("/questions/next", :method => "post", :class => "response_form") do %>
+			<%= form_tag("/questions/respond", :method => "post", :class => "response_form") do %>
 
 				<td><%= radio_button_tag(:answer, 0) %>
 				<%= label_tag(:answer_s_disagree, "Strongly Disagree") %></td>

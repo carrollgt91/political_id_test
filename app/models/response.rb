@@ -5,6 +5,7 @@ class Response < ActiveRecord::Base
   belongs_to :question
 
   validates :answer, :user_id, :question_id, presence: true
+  validates :answer, :inclusion => 0..3
   
   def string_answer
   	case answer

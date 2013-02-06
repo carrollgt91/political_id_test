@@ -36,4 +36,13 @@ describe Response do
 		before { @response.user_id = nil }
 		it { should_not be_valid }
 	end	
+
+	describe "when answer is greater than 3" do
+		before { @response.answer = 4 }
+		it { should_not be_valid }
+	end
+	describe "when answer is less than 0" do
+		before { @response.answer = -1 }
+		it { should_not be_valid }
+	end
 end

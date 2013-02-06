@@ -5,9 +5,9 @@ FactoryGirl.define do
     economic_score 10
     foreign_p_score 10
 
-    economic_response_count  0
-    social_response_count 0
-    foreign_p_response_count 0
+    economic_response_count  3
+    social_response_count 5
+    foreign_p_response_count 4
 
     user
   end
@@ -41,6 +41,13 @@ FactoryGirl.define do
     orientation { orient }
     q_type { type }
 
+  end
+
+  factory :response do
+    user
+    result
+    question
+    answer
   end
 
 end

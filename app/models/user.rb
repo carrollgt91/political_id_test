@@ -8,8 +8,8 @@ class User < ActiveRecord::Base
   validates :name, length: { maximum: 50 }
   validates :email,	uniqueness: { case_sensitive: false }
 
-  has_many :responses
-  has_one :result
+  has_many :responses, dependent: :destroy
+  has_one :result,  dependent: :destroy
 
   def create_result
     result = Result.new(social_score:0, economic_score:0, foreign_p_score:0,social_response_count:0, economic_response_count:0, foreign_p_response_count:0, user_id:self.id)
