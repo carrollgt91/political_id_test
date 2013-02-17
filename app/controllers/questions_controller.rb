@@ -39,10 +39,11 @@ class QuestionsController < ApplicationController
     
     response.answer = answer.to_i
 
-    if(response.save)
-      redirect_to Question.find(qid+1)
+    if(response.save && Question.find(qid).next)
+      binding.pry
+      redirect_to Question.find(qid).next
     else
-      render Question.find(qid)
+      redirect_to Question.find(qid)
     end
   end
 
