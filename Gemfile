@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.12'
+gem 'rails', '3.2.13'
 gem 'omniauth-facebook'
 
 # Bundle edge Rails instead:
@@ -13,7 +13,6 @@ group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'bootstrap-sass', '2.1'
-
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
@@ -30,8 +29,9 @@ group :development, :test do
 
 	gem 'rspec-rails', '2.11.0'
   gem 'guard-rspec', '1.2.1'
-  gem 'guard-spork', '1.2.0'
+  gem 'guard-spork', '1.5.0'
   gem 'spork', '0.9.2'
+  gem 'rb-inotify', '~> 0.9'
 end
 
 group :test do

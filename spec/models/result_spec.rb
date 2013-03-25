@@ -36,4 +36,15 @@ describe Result do
 		end
 	end
 
+	describe "when the use has answered enough questions" do
+		before do
+			@result.economic_response_count = 5 
+			@result.economic_score = 11
+		end
+
+		it "should calculate the correct score" do
+			@result.economic_result.should eq(50)
+		end
+	end
+
 end
