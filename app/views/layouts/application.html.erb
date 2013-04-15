@@ -23,8 +23,9 @@
               <% else %>
                 <li><%= link_to "Sign in", login_path %></li>
               <% end %>
-              <li><%= link_to "Questions", question_path(1) %></li>
-
+              <% if Question.first %>
+                <li><%= link_to "Questions", question_path(Question.first) %></li>
+              <% end %> 
             </ul>
           </nav>
         </div>
