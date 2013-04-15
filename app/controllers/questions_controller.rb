@@ -40,7 +40,6 @@ class QuestionsController < ApplicationController
     response.answer = answer.to_i
 
     if(response.save && Question.find(qid).next)
-      binding.pry
       redirect_to Question.find(qid).next
     else
       redirect_to Question.find(qid)
