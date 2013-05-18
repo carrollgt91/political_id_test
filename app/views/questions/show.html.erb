@@ -1,4 +1,3 @@
-
 <% if @ques.previous %>	
 		<div id="last">
 		<%= link_to "< last", @ques.previous %>
@@ -33,3 +32,9 @@
 		<% end %>
 
 </div>
+
+<%if @response %>
+	<div class="response" data-response-answer="<%= @response.answer %>">
+	</div>
+<% end %>
+

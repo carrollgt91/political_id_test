@@ -1,0 +1,19 @@
+# Place all the behaviors and hooks related to the matching controller here.
+# All this logic will automatically be available in application.js.
+# You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
+$ ->
+
+	answer = $('.response').attr("data-response-answer")
+	if answer?
+		console.log("response answer: " + answer)
+		$("input#answer_" + answer).prop("checked",true)
+
+	$("input:radio:checked").parent().addClass("highlight")
+
+	$('.answer').click ->
+		$(this).siblings().removeClass("highlight")
+		$(this).addClass("highlight")
+		$(this).children('input').prop('checked', true)
+	$('.submit-answer').click ->
+		$("form").submit()
+		
