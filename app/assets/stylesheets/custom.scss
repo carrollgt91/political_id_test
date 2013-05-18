@@ -3,13 +3,21 @@
 /* universal */
 
 
+h2 {
+  font-weight:400;
+}
+
 html {
+  background-color:black;
   overflow-y: scroll;
 }
 
 body {
   padding-top: 60px;
+  font-family: 'Lato',sans-serif;
+  background-color:black;
 }
+
 
 section {
   overflow: auto;
@@ -17,6 +25,22 @@ section {
 
 textarea {
   resize: vertical;
+}
+
+.answer {
+  padding:15px;
+  text-transform:lowercase;
+  background-color:rgb(16, 76, 152);
+  border-top:2px solid rgb(0,67,123); 
+  color:#D8D8D8;
+}
+
+.answer.highlight {
+  background-color:rgb(50, 139, 150);
+}
+
+.answer label {
+  font-weight:300;
 }
 
 .center {
@@ -45,7 +69,56 @@ textarea {
 	margin: 10px 5px;
 }
 
-.submit_question {
+.form_wrapper {
   display:block;
-  margin: 35% auto 20px auto;
+  margin:10px auto;
+  float:none;   
+}
+
+.question {
+  font-size: 18px;
+  font-weight: 500;
+  margin-top: 10px;
+  color:white;
+  padding:60px;
+  text-align:center;
+  text-transform:uppercase;
+  margin: 0;
+}
+
+.question-wrapper {
+  background-color:rgb(16, 76, 152);
+  margin-top:30px;
+}
+
+.response_form {
+  margin: 0 auto;
+  float:none
+}
+
+.response_form input {
+  display:none;
+  margin: 0 auto;
+}
+
+.response_form input.submit_question {
+  margin: 20px auto 20px auto;
+}
+
+.response_form label {
+  display:block;
+  text-align:center;
+  margin: 5px auto;
+}
+
+.submit-answer {
+  background-color:rgb(123,184,41);
+  color:white;
+  text-align:center;
+  padding: 20px 0 ;
+}
+
+.submit-answer h2 {
+  margin:0;
+  color:#E8E8E8;
 }

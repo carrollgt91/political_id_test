@@ -48,8 +48,8 @@ ActiveRecord::Schema.define(:version => 20130128040515) do
     t.datetime "updated_at",       :null => false
     t.string   "fb_id"
     t.string   "oauth_token"
-    t.string   "pic_url"
     t.datetime "oauth_expires_at"
+    t.string   "pic_url"
   end
 
 end

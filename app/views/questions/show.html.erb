@@ -11,153 +11,25 @@
 	</div>
 <% end %>
 
-
-
-<table class="main">
-<tr>
-<td colspan="5"><h2 class="question"><%= @ques.text %></h2></td>
-</tr>
-	<tr>
-		
-			<%= form_tag("/questions/respond", :method => "post", :class => "response_form") do %>
-
-				<td><%= radio_button_tag(:answer, 0) %>
-				<%= label_tag(:answer_s_disagree, "Strongly Disagree") %></td>
-				<td><%= radio_button_tag(:answer, 1) %>
-				<%= label_tag(:answer_disagree, "Disagree") %></td>
-				<td><%= radio_button_tag(:answer, 2) %>
-				<%= label_tag(:answer_agree, "Agree") %></td>
-				<td><%= radio_button_tag(:answer, 3) %>
-				<%= label_tag(:answer_s_agree, "Strongly Agree") %></td>
-				<%= hidden_field_tag "question_id", @ques.id %>
-	</tr>
-</table>
-
-<%= submit_tag("Submit", :controller => :questions, :action => :next, :class => "submit_question") %>
-<% end %>
-
-<% if @response %>
-	<div class="row">
-		<div class="span6 offset3">
-			<h3 class=> Current response: <%= @response.string_answer %>
+<div class="row">
+	<div class="span12 form_wrapper">
+		<div class="question-wrapper">
+			<h2 class="question"><%= @ques.text %></h2>
 		</div>
-	</div>
-<% end %>
+		<%= form_tag("/questions/respond", :method => "post", :class => "response_form") do %>
 
-<form>
-<table id="progress">
-<tr>
-<td><p>90%</p></td>
-<td><p>100%</p></td>
-<td><p>100%</p></td>
-</tr>
-<tr>
-<td><p>economic</p></td>
-<td><p>social</p></td>
-<td><p>foreign</p></td>
-</tr>
-</table>
-</form>
+			<div class="answer"><%= radio_button_tag(:answer, 0) %>
+			<%= label_tag(:answer_s_disagree, "Strongly Disagree") %></div>
+			<div class="answer"><%= radio_button_tag(:answer, 1) %>
+			<%= label_tag(:answer_disagree, "Disagree") %></div>
+			<div class="answer"><%= radio_button_tag(:answer, 2) %>
+			<%= label_tag(:answer_agree, "Agree") %></div>
+			<div class="answer"><%= radio_button_tag(:answer, 3) %>
+			<%= label_tag(:answer_s_agree, "Strongly Agree") %></div>
+			<%= hidden_field_tag "question_id", @ques.id %>
+			<div class="submit-answer">
+				<h2>submit</h2>
+			<%= submit_tag("Submit", :controller => :questions, :action => :next, :class => "submit_question") %></div>
+		<% end %>
 
-<form>
-<table id="rate">
-<tr>
-<td colspan="2"><p>rate this question:</p></td>
-</tr>
-<tr>
-<td><p><a class="like" href="#">like</a> 78%</p></td>
-<td><p><a class="dislike" href="#">dislike</a> 22%</p></td>
-</tr>
-</table>
-</form>
-
-<div style="display:none;"><!--fancybox-->
-<div id="discussion">
-<div id="to"><h3 class="oif">Those Opposed:</h3></div>
-<div id="tif"><h3 class="oif">Those In Favor:</h3></div>
-<div class="opposed">
-	<div class="post">
-		<h5 class="user">UserName1:</h5>
-		<p>"I am strongly opposed to this statement because lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent malesuada, lacus vel lobortis mollis, leo nisi fermentum mauris, sit amet rutrum erat justo et lorem. Vestibulum a cursus elit. Pellentesque nisl enim, suscipit ut ultrices eu, gravida nec nibh. Etiam tincidunt fringilla risus, quis blandit mauris eleifend eget. Ut sit amet magna non urna dapibus mollis. Ut quam diam, dictum ac egestas eget, gravida a libero. Sed id nibh sapien, at consectetur diam. Vestibulum non mauris posuere justo consequat dapibus."<p>
-	</div><!--post-->
-		<h6><a class="like" href="#">like</a> 81%</h6>
-		<h6><a class="dislike" href="#">dislike</a> 19%</h6>
-		<h6 class="drop">respond</h6>
-			<div class="responses">
-				<div class="aresponse">
-					<textarea>@UserName1 </textarea>
-					<input type="submit" value="done" class="done">
-				</div>
-			</div>
-	<div class="post">
-		<h5 class="user">UserName3:</h5>
-		<p>"I am strongly opposed to this statement because lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent malesuada, lacus vel lobortis mollis, leo nisi fermentum mauris, sit amet rutrum erat justo et lorem. Vestibulum a cursus elit. Pellentesque nisl enim, suscipit ut ultrices eu, gravida nec nibh. Etiam tincidunt fringilla risus, quis blandit mauris eleifend eget. Ut sit amet magna non urna dapibus mollis. Ut quam diam, dictum ac egestas eget, gravida a libero. Sed id nibh sapien, at consectetur diam. Vestibulum non mauris posuere justo consequat dapibus."<p>
-	</div><!--post-->
-		<h6><a class="like" href="#">like</a> 53%</h6>
-		<h6><a class="dislike" href="#">dislike</a> 47%</h6>
-		<h6 class="drop">respond</h6>
-			<div class="responses">
-				<div class="aresponse">
-					<textarea>@UserName3 </textarea>
-					<input type="submit" value="done" class="done">
-				</div>
-			</div>
-	<div class="post">
-		<h5 class="user">UserName5:</h5>
-		<p>"I am strongly opposed to this statement because lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent malesuada, lacus vel lobortis mollis, leo nisi fermentum mauris, sit amet rutrum erat justo et lorem. Vestibulum a cursus elit. Pellentesque nisl enim, suscipit ut ultrices eu, gravida nec nibh. Etiam tincidunt fringilla risus, quis blandit mauris eleifend eget. Ut sit amet magna non urna dapibus mollis. Ut quam diam, dictum ac egestas eget, gravida a libero. Sed id nibh sapien, at consectetur diam. Vestibulum non mauris posuere justo consequat dapibus."<p>
-	</div><!--post-->
-		<h6><a class="like" href="#">like</a> 13%</h6>
-		<h6><a class="dislike" href="#">dislike</a> 87%</h6>
-		<h6 class="drop">respond</h6>
-			<div class="responses">
-				<div class="aresponse">
-					<textarea>@UserName5 </textarea>
-					<input type="submit" value="done" class="done">
-				</div>
-			</div>
-</div><!--opposed-->
-
-<div class="infavor">
-	<div class="post">
-		<h5 class="user">UserName2:</h5>
-		<p>"I am strongly in favor of this statement because lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent malesuada, lacus vel lobortis mollis, leo nisi fermentum mauris, sit amet rutrum erat justo et lorem. Vestibulum a cursus elit. Pellentesque nisl enim, suscipit ut ultrices eu, gravida nec nibh. Etiam tincidunt fringilla risus, quis blandit mauris eleifend eget. Ut sit amet magna non urna dapibus mollis. Ut quam diam, dictum ac egestas eget, gravida a libero. Sed id nibh sapien, at consectetur diam. Vestibulum non mauris posuere justo consequat dapibus."<p>
-	</div><!--post-->
-		<h6><a class="like" href="#">like</a> 92%</h6>
-		<h6><a class="dislike" href="#">dislike</a> 8%</h6>
-		<h6 class="drop">respond</h6>
-			<div class="responses">
-				<div class="aresponse">
-					<textarea>@UserName2 </textarea>
-					<input type="submit" value="done" class="done">
-				</div>
-			</div>
-	<div class="post">
-		<h5 class="user">UserName4:</h5>
-		<p>"I am strongly in favor of this statement because lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent malesuada, lacus vel lobortis mollis, leo nisi fermentum mauris, sit amet rutrum erat justo et lorem. Vestibulum a cursus elit. Pellentesque nisl enim, suscipit ut ultrices eu, gravida nec nibh. Etiam tincidunt fringilla risus, quis blandit mauris eleifend eget. Ut sit amet magna non urna dapibus mollis. Ut quam diam, dictum ac egestas eget, gravida a libero. Sed id nibh sapien, at consectetur diam. Vestibulum non mauris posuere justo consequat dapibus."<p>
-	</div><!--post-->
-		<h6><a class="like" href="#">like</a> 78%</h6>
-		<h6><a class="dislike" href="#">dislike</a> 22%</h6>
-		<h6 class="drop">respond</h6>
-			<div class="responses">
-				<div class="aresponse">
-					<textarea>@UserName4 </textarea>
-					<input type="submit" value="done" class="done">
-				</div>
-			</div>
-	<div class="post">
-		<h5 class="user">UserName6:</h5>
-		<p>"I am strongly in favor of this statement because lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent malesuada, lacus vel lobortis mollis, leo nisi fermentum mauris, sit amet rutrum erat justo et lorem. Vestibulum a cursus elit. Pellentesque nisl enim, suscipit ut ultrices eu, gravida nec nibh. Etiam tincidunt fringilla risus, quis blandit mauris eleifend eget. Ut sit amet magna non urna dapibus mollis. Ut quam diam, dictum ac egestas eget, gravida a libero. Sed id nibh sapien, at consectetur diam. Vestibulum non mauris posuere justo consequat dapibus."<p>
-	</div><!--post-->
-		<h6><a class="like" href="#">like</a> 54%</h6>
-		<h6><a class="dislike" href="#">dislike</a> 46%</h6>
-		<h6 class="drop">respond</h6>
-			<div class="responses">
-				<div class="aresponse">
-					<textarea>@UserName6 </textarea>
-					<input type="submit" value="done" class="done">
-				</div>
-			</div>
-</div><!--infavor-->
-<div style="clear: both;"></div><!--empty-->
-</div><!--/discussion-->
-</div><!--/fancybox-->
+</div>

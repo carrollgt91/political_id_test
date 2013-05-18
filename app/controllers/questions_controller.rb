@@ -40,9 +40,9 @@ class QuestionsController < ApplicationController
     response.answer = answer.to_i
 
     if(response.save && Question.find(qid).next)
-      redirect_to Question.find(qid).next
+      redirect_to question.next
     else
-      redirect_to Question.find(qid)
+      redirect_to question
     end
   end
 
@@ -50,4 +50,5 @@ class QuestionsController < ApplicationController
     @ques = Question.find(params[:id])
     @response = Response.find_by_user_id_and_question_id(current_user.id, @ques.id) if current_user
   end
+  
 end
