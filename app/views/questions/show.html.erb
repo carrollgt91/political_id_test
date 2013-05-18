@@ -1,32 +1,34 @@
-<% if @ques.previous %>	
-		<div id="last">
-		<%= link_to "< last", @ques.previous %>
-	</div>
-<% end %>	
 
-<% if @ques.next %>	
-		<div id="next">
-		<%= link_to "next >", @ques.next %>
-	</div>
-<% end %>
+
+
 
 <div class="row">
 	<div class="span12 form_wrapper">
-		<div class="question-wrapper">
-			<h2 class="question"><%= @ques.text %></h2>
+		<div class="question-wrapper span12">
+			<div id="last" class="span1">
+				<% if @ques.previous %>	
+					<%= link_to "<", @ques.previous %>
+				<% end %>	
+			</div>
+			<h2 class="question span10"><%= @ques.text %></h2>
+			<div id="next" class="span1">
+				<% if @ques.next %>	
+					<%= link_to ">", @ques.next %>
+				<% end %>
+			</div>
 		</div>
 		<%= form_tag("/questions/respond", :method => "post", :class => "response_form") do %>
 
-			<div class="answer"><%= radio_button_tag(:answer, 0) %>
+			<div class="answer cell span12"><%= radio_button_tag(:answer, 0) %>
 			<%= label_tag(:answer_s_disagree, "Strongly Disagree") %></div>
-			<div class="answer"><%= radio_button_tag(:answer, 1) %>
+			<div class="answer cell span12"><%= radio_button_tag(:answer, 1) %>
 			<%= label_tag(:answer_disagree, "Disagree") %></div>
-			<div class="answer"><%= radio_button_tag(:answer, 2) %>
+			<div class="answer cell span12"><%= radio_button_tag(:answer, 2) %>
 			<%= label_tag(:answer_agree, "Agree") %></div>
-			<div class="answer"><%= radio_button_tag(:answer, 3) %>
+			<div class="answer cell span12"><%= radio_button_tag(:answer, 3) %>
 			<%= label_tag(:answer_s_agree, "Strongly Agree") %></div>
 			<%= hidden_field_tag "question_id", @ques.id %>
-			<div class="submit-answer">
+			<div class="submit-answer cell span12">
 				<h2>submit</h2>
 			<%= submit_tag("Submit", :controller => :questions, :action => :next, :class => "submit_question") %></div>
 		<% end %>

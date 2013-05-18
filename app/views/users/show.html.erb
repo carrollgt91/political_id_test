@@ -1,8 +1,16 @@
 <% @user = current_user %>
-<%= image_tag(@user.pic_url, alt: "Facebook Profile Picture") %>
-<h1><%= @user.name %> </h1>
-<br>
-
-<h3> Economic: <%= @user.result.economic_result %> </h3>
-<h3> Social: <%= @user.result.social_result %> </h3>
-<h3> Foreign Policy: <%= @user.result.foreign_p_result %> </h3>
+<div class="row">
+	<div class="fb-user-wrapper span12">
+		<div class="prof-pic-wrapper span4">
+			<%= image_tag(@user.pic_url, alt: "Facebook Profile Picture") %>
+		</div>
+		<div class="span8">
+			<h2><%= @user.name %> </h2>
+		</div>
+	</div>
+	<div class="span12">
+		<div class="cell"><h3> Economic: <%= @user.result.economic_result %> </h3></div>
+		<div class="cell"><h3> Social: <%= @user.result.social_result %> </h3></div>
+		<div class="cell"><h3> Foreign Policy: <%= @user.result.foreign_p_result %> </h3></div>
+	</div>
+</div>

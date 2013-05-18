@@ -1,7 +1,6 @@
 <% provide(:title, "Home") %>
 <div class="center">
-	<h1>Political ID Test</h1>
 	<% unless current_user %>
-	<%= link_to "Sign up!", signup_path, class: "btn btn-large btn-primary" %>
+	<%= link_to "Sign in with Facebook", signup_path, class: "cell span12 signup" %>
 	<% end %>
 </div>

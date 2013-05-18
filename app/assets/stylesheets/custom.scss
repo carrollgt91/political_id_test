@@ -2,9 +2,11 @@
 
 /* universal */
 
-
 h2 {
   font-weight:400;
+}
+h3 {
+  font-weight:200;
 }
 
 html {
@@ -27,8 +29,9 @@ textarea {
   resize: vertical;
 }
 
-.answer {
-  padding:15px;
+.cell{
+  padding:15px 0;
+  text-align:center;
   text-transform:lowercase;
   background-color:rgb(16, 76, 152);
   border-top:2px solid rgb(0,67,123); 
@@ -69,30 +72,46 @@ textarea {
 	margin: 10px 5px;
 }
 
-.form_wrapper {
-  display:block;
-  margin:10px auto;
-  float:none;   
+.fb-user-wrapper {
+  padding:40px 0;
+  text-align:center;
+  background-color:rgb(16, 76, 152);
+  color:white;
 }
 
-.navbar a{
+.form_wrapper {
+  display:block;
+  margin:0 auto;
+  float:none;
+}
+
+#logo {
   color:white;
+  float:left;
+  font-size:24px;
+  margin: 15px 0;
+}
+.prof-pic-wrapper {
+  margin: 0;
 }
 
 .question {
-  font-size: 18px;
+  font-size: 24px;
   font-weight: 500;
   margin-top: 10px;
   color:white;
-  padding:60px;
   text-align:center;
   text-transform:uppercase;
   margin: 0;
 }
 
+.question h2 {
+  font-weight:400;
+}
+
 .question-wrapper {
   background-color:rgb(16, 76, 152);
-  margin-top:30px;
+  padding: 40px 0;
 }
 
 .response_form {
@@ -115,11 +134,24 @@ textarea {
   margin: 5px auto;
 }
 
+.signup {
+  padding:40px 0;
+  font-size:24px;
+}
+
+a.signup:hover {
+  color:white;
+}
+
 .submit-answer {
-  background-color:rgb(123,184,41);
+  background-color:rgb(16, 76, 152);
   color:white;
   text-align:center;
   padding: 20px 0 ;
+}
+
+.answer:hover, .submit-answer:hover {
+  background-color:#3A76C2;
 }
 
 .submit-answer h2 {
