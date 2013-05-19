@@ -1,5 +1,7 @@
 @import "bootstrap";
 
+$bg_color: #414141;
+
 /* universal */
 
 h2 {
@@ -10,14 +12,14 @@ h3 {
 }
 
 html {
-  background-color:black;
+  background-color:$bg_color;
   overflow-y: scroll;
 }
 
 body {
   padding-top: 60px;
   font-family: 'Lato',sans-serif;
-  background-color:black;
+  background-color:$bg_color;
 }
 
 

@@ -24,7 +24,8 @@ class User < ActiveRecord::Base
       user.email = auth.info.email
       user.oauth_token = auth.credentials.token
       user.oauth_expires_at = Time.at(auth.credentials.expires_at)
-      user.pic_url = auth.info.image
+      pic_url = auth.info.image.gsub("?type=square", "?width=100&height=100")
+      user.pic_url = pic_url
       user.save!
     end
   end
