@@ -35,7 +35,7 @@ class QuestionsController < ApplicationController
     question = Question.find(qid)
 
     response = Response.find_or_create_by_user_id_and_question_id(current_user.id, qid)
-    answer = question.orientation ? params[:answer] : 3 - params[:answer]
+    answer = question.orientation ? params[:answer].to_i : 3 - params[:answer].to_i
     
     response.answer = answer.to_i
 
