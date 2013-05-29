@@ -1,3 +1,4 @@
+<% provide(:title, "Profile") %>
 <% @user = current_user %>
 <div class="row">
 	<div class="fb-user-wrapper span12">
@@ -8,9 +9,9 @@
 			<h2><%= @user.name %> </h2>
 		</div>
 	</div>
-	<div class="span12">
-		<div class="cell"><h3> Economic: <%= @user.result.economic_result %> </h3></div>
-		<div class="cell"><h3> Social: <%= @user.result.social_result %> </h3></div>
-		<div class="cell"><h3> Foreign Policy: <%= @user.result.foreign_p_result %> </h3></div>
+	<div class="span12 results">
+		<div class="cell"><span> Economic: <%= @user.result.economic_result %> </span></div>
+		<div class="cell"><span> Social: <%= @user.result.social_result %> </span></div>
+		<div class="cell"><span> Foreign Policy: <%= @user.result.foreign_p_result %> </span></div>
 	</div>
 </div>

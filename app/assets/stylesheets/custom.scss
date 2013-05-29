@@ -24,11 +24,15 @@ body {
 
 
 section {
-  overflow: auto;
+  overflow: auto; 
 }
 
 textarea {
   resize: vertical;
+}
+
+a:hover {
+  text-decoration:none;
 }
 
 .cell{
@@ -38,6 +42,10 @@ textarea {
   background-color:rgb(16, 76, 152);
   border-top:2px solid rgb(0,67,123); 
   color:#D8D8D8;
+}
+
+.clickable:hover {
+  background-color:#3A76C2; 
 }
 
 .answer.highlight {
@@ -93,6 +101,10 @@ textarea {
   font-size:24px;
   margin: 15px 0;
 }
+.nav-wrapper {
+  margin-top:10px;
+}
+
 .prof-pic-wrapper {
   margin: 0;
 }
@@ -114,6 +126,15 @@ textarea {
 .question-wrapper {
   background-color:rgb(16, 76, 152);
   padding: 40px 0;
+}
+
+.results .cell {
+  padding: 40px 0;
+}
+
+.results .cell span {
+  font-weight:200;
+  font-size:20px;
 }
 
 .response_form {

@@ -14,18 +14,17 @@
       <div class="navbar-inner">
         <div class="container">
           <%= link_to "Poliana", '#', id: "logo" %>
-          <nav>
+          <nav class="nav-wrapper">
             <ul class="nav pull-right">
-              <li><%= link_to "Home",    root_path %></li>
+              <li><%= link_to "Home", root_path %></li>
               <% if current_user %>
                 <li> <%= link_to "Sign out", logout_path %></li>
-                <li><%= link_to "Profile", profile_path%></li>
+                <% if Question.first %>
+                  <li><%= link_to "Questions", question_path(Question.first) %></li>
+                <% end %> 
               <% else %>
                 <li><%= link_to "Sign in", login_path %></li>
               <% end %>
-              <% if Question.first %>
-                <li><%= link_to "Questions", question_path(Question.first) %></li>
-              <% end %> 
             </ul>
           </nav>
         </div>
