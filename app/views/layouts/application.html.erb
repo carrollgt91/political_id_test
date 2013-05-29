@@ -33,5 +33,6 @@
     <div class="container">
       <%= yield %>
     </div>
+    <%= render :partial => 'layouts/ga' if Rails.env.production? %>
   </body>
 </html>
